@@ -1,0 +1,24 @@
+syntax = "proto3";
+package block;
+
+option go_package = "github.com/lbhdc/block/api/v0/db";
+
+message GetReq {
+  string key = 1;
+}
+
+message GetRes {
+  bytes value = 1;
+}
+
+message PutReq {
+  string key = 1;
+  bytes value = 2;
+}
+
+message PutRes {}
+
+service KeyValue {
+  rpc Get(GetReq) returns (GetRes) {}
+  rpc Put(PutReq) returns (PutRes) {}
+}

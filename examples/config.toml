@@ -1,0 +1,8 @@
+[server]
+addr = "localhost"
+port = 8080
+
+[handler.echo]
+port = 9090
+path = "/echo"
+entrypoint = "go run examples/echo/main.go"
